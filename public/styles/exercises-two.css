@@ -1,0 +1,141 @@
+/*Exercício 2*/
+p{
+    display: flex;
+    font-size: 10pt;
+}
+h1, h2, h3{
+    display: flex;
+}
+
+
+/*Exercício 4*/
+*{
+    font-family: arial;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    width: 30% !important; 
+    border: 1px solid  #DDDDDD;;
+    border-collapse: collapse;
+    padding-bottom: 1%;
+}
+
+th, td{
+    border-bottom: 1px solid  #DDDDDD;
+}
+
+.darkBlue{
+    color: #003366;
+}
+
+.lightBlue{
+    color: #1398BE;
+}
+
+.orange{
+    color: #DE9800;
+}
+
+.gray{ 
+    color: #CCCCCC;
+}
+
+.red{
+    color: #C91B04;
+}
+
+
+
+#position, #columnP, #columnJ, #columnV, #columnE, #columnD, #columnGP, #columnGC, #columnSG{
+    width: 3%;
+}
+
+#title{
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    color: #999999;
+}
+
+#position{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; 
+}
+
+#columnTime{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    color: #666666;
+    width: 20%;
+}
+
+#columnP{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    background-color: #F7F7F7;
+}
+
+#columnPercentage{
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+    background-color: #F7F7F7;
+    width: 5%;
+}
+
+#columnV, #columnD, #columnGC{
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+    background-color: #F7F7F7;
+    
+}
+
+#columnJ, #columnE, #columnGP, #columnSG{
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+}
+
+#darkLine{
+    border-bottom: 2px solid #CCCCCC;
+}
+
+#legendClass{
+    border-color: white;
+    font-size: 10px;
+    color: #8F8F8F;
+    text-align: left;
+    font-weight: lighter;
+}
+
+#legendBold{
+    font-size: 10px;
+    color: #555555;
+    text-align: left;
+    font-weight: bold;
+}
+
+#legend{
+    font-size: 10px;
+    color: #555555;
+    text-align: left;
+    font-weight: lighter;
+    padding-bottom: 1.5%;
+    padding-left: 0.5%;
+}
+
+svg{
+    width: 10px;
+    height: 10px;
+    padding-left: 0.5%;
+}
