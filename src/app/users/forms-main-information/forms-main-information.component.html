@@ -1,0 +1,46 @@
+<div class="title">
+    <h1>Registre-se</h1>
+</div>
+<div class="form-events">
+    <!-- action="../../public/scripts/register.php" method="POST"  -->
+
+    <form name="userRegister" class="needs-validation" novalidate>
+        <div class="form-group" style="width: 100%;">
+            <label for="name">Informe como gostaria de ser chamado:</label>
+            <input type="text" class="form-control" id="name" name="name" 
+            formControlName="name"
+            [ngClass]="{ 'is-invalid': submitted && hasError('name')}">
+        </div>
+        <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')['required']" >
+          Por favor informe um nome para o curso.
+        </div>
+        <div class="form-group">
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" name="rg">
+        </div>
+        
+        <div class="form-group">
+            <label for="sex">Sexo Biológico:</label>
+            <select name="sex" class="form-control">
+                <option selected>Clique e selecione o seu sexo biológico</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="">Senha:</label>
+            <input type="password" class="form-control" id="pwd" name="pswd" required>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember" required> Eu aceito os termos de uso da
+                plataforma.
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Criar conta</button>
+    </form>
+</div>

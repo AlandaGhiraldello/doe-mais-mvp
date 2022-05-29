@@ -1,0 +1,18 @@
+<div class="login">
+    <!-- action="../../public/scripts/validatelogin.php" method="POST" -->
+    <!-- <form> -->
+        <h3>Login</h3>
+        <div class="col-8">
+            <label for="email">E-mail:</label>
+            <input [(ngModel)]="user.email" type="email" class="validate" placeholder="E-mail" name="email">
+        </div>
+        <div class="col-8">
+            <label for="pwd">Senha:</label>
+            <input [(ngModel)]="user.password" type="password" class="validate" placeholder="Senha" name="pwd">
+        </div>
+        <button type="submit" class="btn btn-info btn-lg btn-block" (click)="toDoLogin()">Entrar</button>
+        <div class="not-count">
+            <p>Ainda não tem acesso? Crie sua conta <a>clicando aqui!</a></p>
+        </div>
+    <!-- </form> -->
+</div>
