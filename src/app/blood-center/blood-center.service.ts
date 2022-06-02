@@ -8,12 +8,12 @@ import { CrudService } from '../shared/crud-service';
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService extends CrudService<User> {
+export class BloodCenterService extends CrudService<User> {
 
     // private readonly API = `${environment.API}users`
 
   constructor(protected http: HttpClient) { 
-    super(http, `${environment.API}users`);
+    super(http, `${environment.API}/bloodCenter`);
   }
 
   // created(params) {

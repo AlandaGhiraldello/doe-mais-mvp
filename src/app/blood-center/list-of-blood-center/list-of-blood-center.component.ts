@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EMPTY, Observable, Subject } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { BloodCenter } from 'src/app/shared/models/blood-center';
+import { BloodCenterService } from '../blood-center.service';
 
 @Component({
   selector: 'app-list-of-blood-center',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListOfBloodCenterComponent implements OnInit {
 
-  constructor() { }
+  bloodCenters$: Observable<BloodCenter[]>;
+  error$ = new Subject<boolean>();
 
-  ngOnInit(): void {
+  constructor(
+    private service: BloodCenterService,
+    private router: Router,
+    private route: ActivatedRoute
+    ) { }
+
+  ngOnInit(): void {  
+    this.bloodCenters$ = this.service.list()
+    .pipe(
+      catchError(error => {
+        console.error(error);
+        this.error$.next(true);
+        // this.handleError();
+        return EMPTY;
+      })
+    );
   }
 
 }

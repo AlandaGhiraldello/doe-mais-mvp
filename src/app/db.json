@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alanda teste 1",
+      "rg": "123456789",
+      "email": "teste@teste.com",
+      "password": "1234",
+      "sex": "Feminino",
+      "gender": "Mulher Cisgênero",
+      "birthday": "27/12/1999",
+      "typeblood": "A+",
+      "phone": "011994858698"
+    },
+    {
+      "id": 2,
+      "name": "testes"
+    },
+    {
+      "id": 3,
+      "name": "testes",
+      "email": "",
+      "password": "",
+      "rg": "",
+      "sex": ""
+    },
+    {
+      "id": 4,
+      "name": "testes",
+      "email": "",
+      "password": "",
+      "rg": "",
+      "sex": ""
+    },
+    {
+      "id": 5,
+      "name": "testes",
+      "email": "",
+      "password": "",
+      "rg": "",
+      "sex": ""
+    },
+    {
+      "id": 6,
+      "name": "testes",
+      "email": "teste@teste.com",
+      "password": "12345",
+      "rg": "58986999",
+      "sex": "masculino"
+    }
+  ]
+}

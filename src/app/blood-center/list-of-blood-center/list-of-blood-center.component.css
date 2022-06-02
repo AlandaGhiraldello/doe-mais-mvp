@@ -1,0 +1,22 @@
+.row{
+    margin-top: 4%;
+}
+
+.card{
+    height: 100%;
+    font-family: 'Times New Roman';
+    word-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
+    padding: 2%;
+    display: flex;
+    border: 1.4px solid #8C030E;
+    border-radius: 0rem 1.8rem 1.8rem 1.8rem;
+}
+
+.container{
+    margin-bottom: 30%;
+}
+
+.card-title{
+    color: #8C030E;
+}

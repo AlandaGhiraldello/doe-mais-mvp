@@ -6,6 +6,8 @@ h1{
 }
 
 img{
+    margin-left: 20%;
+    margin-bottom: 2%;
     max-width: 50%;
     max-height: 50%;
 }

@@ -1,11 +1,11 @@
 .form-events{
-    margin-top: 4%;
+    margin-top: 1%;
     margin-bottom: 20%;
-    padding: 10%;
+    padding: 4%;
     border-radius: 20px;
 }
 
-#pwd, #email, #uname, #rg, .form-control{
+#pwd, #email, #uname, #rg, #birthday, #phone, .form-control{
     display: flex;
     border: 2px solid #eeeee2;
     border-radius: 0rem 1.8rem 1.8rem 1.8rem;
@@ -14,11 +14,25 @@
     height: 2.8rem;
 }
 
-.form-group{
+.form-group, .form-control{
     margin-bottom: 1.4rem;
 }
 
 .title{
-    margin-top: 8%;
+    margin-top: 4%;
 }
 
+h1{
+    color: #8C030E;
+}
+
+label{
+    font-size: larger;
+}
+
+button{
+    margin-top: 2%;
+    color: #ffffff;
+    background-color: #8C030E;
+    border-color: #8C030E;
+}

@@ -8,7 +8,6 @@ export class CrudService<T> {
   list() {
     return this.http.get<T[]>(this.API_URL)
       .pipe(
-        delay(2000),
         tap(console.log)
       );
   }
@@ -28,8 +27,9 @@ export class CrudService<T> {
   save(record: T) {
     if (record['id']) {
       return this.update(record);
-    }
-    return this.create(record);
+    } else{
+      return this.create(record);
+    }    
   }
 
   remove(id) {
