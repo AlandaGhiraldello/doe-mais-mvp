@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../users.service';
 import { Location } from '@angular/common';
+import { AuthService } from '../auth.service';
 // import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 
@@ -18,11 +19,13 @@ export class FormsMainInformationComponent implements OnInit {
   private loading: boolean;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private service: UsersService,
     private location: Location,
     // private modal:AlertModalService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private auth: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -33,13 +36,19 @@ export class FormsMainInformationComponent implements OnInit {
 
     const user = this.route.snapshot.data['user'];
 
-    this.form = this.fb.group({
+    this.form = this.formBuilder.group({
       id: [user.id],
-      nome: [user.name, [Validators.required]],
+      name: [user.name, [Validators.required]],
       email: [user.email, [Validators.required]],
-      senha: [user.password, [Validators.required]],
-      cpf: [user.rg, [Validators.required]],
-      sexo_biologico: [user.sex, [Validators.required]]
+      password: [user.password, [Validators.required, Validators.minLength(5)]],
+      rg: [user.rg, [Validators.required]],
+      sex: [user.sex, [Validators.required]],
+      typeblood: [user.typeblood, [Validators.required]],
+      gender: [user.gender, [Validators.required]],
+      birthday: [user.birthday, [Validators.required]],
+      phone: [user.phone, [Validators.required]],
+      acceptTerms: [user.acceptTerms, [Validators.required]],
+      acceptNotifications: [user.acceptNotifications, [Validators.required]]
     });
 
   }
@@ -48,7 +57,7 @@ export class FormsMainInformationComponent implements OnInit {
     return this.form.get(field).errors;
   }
 
-  onsubmit() {
+  onSubmit() {
     this.submitted = true;
     console.log(this.form.value);
     if (this.form.valid) {
@@ -57,17 +66,19 @@ export class FormsMainInformationComponent implements OnInit {
       let msgSuccess = 'Conta criada com sucesso!';
       let msgError = 'Erro ao criar conta, tente novamente!';
       if (this.form.value.id) {
-        msgSuccess = 'Conta criada com sucesso!';
-        msgError = 'Erro ao criar conta, tente novamente!';
+        msgSuccess = 'Conta atualizada com sucesso!';
+        msgError = 'Erro ao atualizar conta, tente novamente!';
       }
 
       this.service.save(this.form.value).subscribe(
         success => {
+          console.log(success)
           // this.modal.showAlertSuccess(msgSuccess);
-            this.location.back();
+          this.router.navigate(['perfil/1']);
         },
         error => {
           this.loading = false;
+          console.log(error)
           // this.modal.showAlertDanger(msgError)
         }
       );
@@ -75,10 +86,10 @@ export class FormsMainInformationComponent implements OnInit {
     }
   }
 
-  onCancel() {
-    this.submitted = false;
-    this.form.reset();
-    // console.log('onCancel');
-  }
+  // onCancel() {
+  //   this.submitted = false;
+  //   this.form.reset();
+  //   // console.log('onCancel');
+  // }
 
 }

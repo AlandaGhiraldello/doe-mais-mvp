@@ -1,9 +1,42 @@
-<div class="card">
-    <div class="card-header">Perfil</div>
-    <div class="card-body">
-        <div class="card">
-            <div class="card-header">Header</div>
-            <div class="card-body">Content</div>
-          </div>
+<div class="row">
+    <h1>Meu Perfil</h1>
+    <div class="col" *ngIf="users$ | async as users; else loadingError">
+        <div class="informations">
+            <div class="card">
+                <div class="card-header">
+                   <h3>Informações do meu perfil</h3> 
+                   <a routerLink="/login">Deslogar</a>
+                </div>
+                <div class="card-body" *ngFor="let user of users">
+                    <p>Nome: {{user.name}}</p>
+                    <p>E-mail: {{user.email}}</p>
+                    <p>RG: {{user.rg}}</p>
+                    <p>Sexo Biológico: {{user.sex}}</p>                    <p>Data de nascimento: {{user.birthday}}</p>
+                    <p>Genêro: {{user.gender}}</p>
+                    <p>Tipo Sanguineo: {{user.typeblood}}</p>
+                    <p>Celular: {{user.phone}}</p>
+                    
+            <span class="float-right">
+                <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(user.id)">
+                  Atualizar cadastro
+                </button> <br>
+  
+                <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(user)">
+                  Excluir conta
+                </button>
+  
+              </span>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <ng-template #loadingError>
+        <div *ngIf="error$ | async; else loading">
+            Erro ao carregar perfil. Tente novamente mais tarde.
+        </div>
+        <ng-template #loading>
+            <span>Carregando Informações do Perfil...</span>
+        </ng-template>
+    </ng-template>
 </div>

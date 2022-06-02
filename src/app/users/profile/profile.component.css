@@ -1,0 +1,25 @@
+.row{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+a{
+    color: #ffffff;
+}
+.card-header{
+    font-family: 'Times New Roman';
+    background-color: #8C030E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.card{
+    font-size: large;
+}
+
+.informations{
+    margin-top: 2% ;
+    margin-bottom: 20%;
+}

@@ -24,6 +24,10 @@
     overflow: hidden;
     background-color: #333;
   }
+
+  h2, a{
+    color: #8C030E;
+  }
   
   /* Style the topnav links */
   .topnav a {
@@ -45,13 +49,13 @@
   /* Left column */
   .leftcolumn {   
     float: left;
-    width: 75%;
+    width: 70%;
   }
   
   /* Right column */
   .rightcolumn {
     float: left;
-    width: 25%;
+    width: 30%;
     background-color: #f1f1f1;
     padding-left: 20px;
   }
@@ -68,6 +72,9 @@
     background-color: white;
     padding: 20px;
     margin-top: 20px;
+    display: flex;
+    border: 1.4px solid #8C030E;
+    border-radius: 0rem 1.8rem 1.8rem 1.8rem;
   }
   
   /* Clear floats after the columns */
@@ -86,7 +93,7 @@
   }
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1520px) {
     .leftcolumn, .rightcolumn {   
       width: 100%;
       padding: 0;
@@ -94,7 +101,7 @@
   }
   
   /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     .topnav a {
       float: none;
       width: 100%;

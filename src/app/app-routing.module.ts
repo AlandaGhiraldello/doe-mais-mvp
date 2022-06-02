@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListOfBloodCenterComponent } from './blood-center/list-of-blood-center/list-of-blood-center.component';
 import { DonationListComponent } from './calendar/donation-list/donation-list.component';
 import { CampaignsListComponent } from './campaigns/campaigns-list/campaigns-list.component';
-import { HomepageComponent } from './homepage/homepage/homepage.component';
+import { AlertComponent } from './notifications/alert/alert.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent},
   { path: 'hemocentros', component: ListOfBloodCenterComponent},
   { path: 'calendario-de-doacoes', component: DonationListComponent},
+  { path: 'avisos-e-alertas', component: AlertComponent},
   { path: 'campanhas', component: CampaignsListComponent},
 ];
 

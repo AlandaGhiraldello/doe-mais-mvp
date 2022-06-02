@@ -2,3 +2,7 @@
     background-color: #eeeeee ;
     font-family: 'Times New Roman';
 }
+
+h1, h2, h3, h4, h5 {
+    color: #8C030E !important
+}

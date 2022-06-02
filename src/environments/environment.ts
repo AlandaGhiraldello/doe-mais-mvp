@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: 'http://127.0.0.1:8000',
+  API: 'https://6295399563b5d108c19b90cd.mockapi.io/api/',
   BASE_URL: '/api'
 };
 
